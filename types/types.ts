@@ -9,3 +9,7 @@ export type PuppyCardProps = {
     puppy: Puppy,
     puppySelector: Function,
 }
+
+export type PuppyDisplayProps = {
+    puppy: Puppy,
+}

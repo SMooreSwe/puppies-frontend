@@ -3,6 +3,7 @@
 import { Puppy } from "@/types/types";
 import { useEffect, useState } from "react";
 import PuppyCard from "./components/PuppyCard";
+import PuppyDisplay from "./components/PuppyDisplay";
 
 export default function Home() {
   const [puppyList, setPuppyList] = useState<Puppy[]>([])
@@ -36,7 +37,10 @@ export default function Home() {
           )
         })}
       </div>
-      <div>{selectedPuppy.name}</div>
+      <PuppyDisplay puppy={selectedPuppy}/>
+      <section>
+        <div>AddPuppy Form Here - modal?</div>
+      </section>
     </main>
   )
 }
