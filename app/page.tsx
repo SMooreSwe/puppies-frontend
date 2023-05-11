@@ -16,11 +16,17 @@ export default function Home() {
     birthdate: '',
   })
   
+  const DeleteFromPuppyList = (id: string) => {
+      const list = puppyList.filter(puppy => puppy._id !== id)
+      setPuppyList(list)
+      setSelectedPuppy(list[0])
+  }
+  
   useEffect(() => {
     fetchAll()
-      .then(puppies => {
-        setPuppyList(puppies)
-        setSelectedPuppy(puppies[0])})
+    .then(puppies => {
+      setPuppyList(puppies)
+      setSelectedPuppy(puppies[0])})
   }, [])
 
   const puppySelector = (newPuppy: Puppy) => {
@@ -41,7 +47,7 @@ export default function Home() {
       </div>
         <PuppyModal buttonText="Add Puppy"/>
       </section>
-      <PuppyDisplay puppy={selectedPuppy}/>
+      <PuppyDisplay puppy={selectedPuppy} listSetter={DeleteFromPuppyList} />
     </main>
   )
 }

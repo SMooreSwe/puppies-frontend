@@ -13,7 +13,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
         <hr className='my-2'/>
         <div className='flex justify-between gap-4'>
           <PuppyModal buttonText='Edit Details'/>
-          <DeleteButton puppyID={_id!} />
+          <DeleteButton puppyID={_id!} listSetter={props.listSetter} />
         </div>
         
       </section>

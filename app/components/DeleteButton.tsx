@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import Modal from 'react-bootstrap/esm/Modal';
 import { DeleteButtonProps } from '@/types/types';
+import { deleteOne } from '../utils/fetchCalls';
 
-const DeleteButton = (props: DeleteButtonProps) => {
+const DeleteButton = ({ puppyID, listSetter }: DeleteButtonProps) => {
     const [ show, setShow ] = useState<boolean>(false);
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
     const handleDelete = () => {
-
+        deleteOne(puppyID)
+        listSetter(puppyID)
+        handleClose()
     }
 
     return (
