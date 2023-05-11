@@ -20,11 +20,13 @@ export type PuppyModalProps = {
     buttonText: string,
     puppy?: Puppy,
     apiCall: Function,
+    puppyExists: boolean,
 }
 
 export type PuppyFormProps = {
     puppy?: Puppy,
     apiCall: Function,
+    puppyExists: boolean,
 }
 
 export type DeleteButtonProps = {

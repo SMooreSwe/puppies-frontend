@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import PuppyForm from './PuppyForm';
 
 const PuppyModal = (props: PuppyModalProps) => {
-  const { buttonText, apiCall } = props;
+  const { buttonText, apiCall, puppy } = props;
   const [ show, setShow ] = useState<boolean>(false);
 
   const handleShow = () => setShow(true);
@@ -33,7 +33,7 @@ const PuppyModal = (props: PuppyModalProps) => {
             </button>
           </Modal.Header>
           <Modal.Body className='p-6 space-y-6'>
-            <PuppyForm apiCall={apiCall}/>
+            <PuppyForm puppy={puppy} apiCall={apiCall} puppyExists={props.puppyExists}/>
           </Modal.Body>
           <Modal.Footer className='flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600'></Modal.Footer>
         </div>

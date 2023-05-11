@@ -48,11 +48,16 @@ export default function Home() {
       setPuppyList(list)
       setSelectedPuppy(puppy)
     })
-    
   }
 
   const editDetails = (id: string, newPuppy: Puppy) => {
-    //editAPICall - body new Puppy
+    fetch(`http://localhost:8080/api/puppies/${id}`, 
+    { method: 'put',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPuppy)},
+    )
     const newList = puppyList.map(puppy => puppy._id === id ? newPuppy : puppy)
     setPuppyList(newList)
     setSelectedPuppy(newPuppy)
@@ -71,9 +76,9 @@ export default function Home() {
           )
         })}
       </div>
-        <PuppyModal buttonText="Add Puppy" apiCall={addPuppyToList}/>
+        <PuppyModal buttonText="Add Puppy" apiCall={addPuppyToList} puppyExists={false}/>
       </section>
-      <PuppyDisplay puppy={selectedPuppy} deleteSetter={deleteFromPuppyList} editSetter={editDetails}/>
+      <PuppyDisplay puppy={selectedPuppy} deleteSetter={deleteFromPuppyList} editSetter={editDetails} />
     </main>
   )
 }
