@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/esm/Modal';
 import { DeleteButtonProps } from '@/types/types';
 import { deleteOne } from '../utils/fetchCalls';
 
-const DeleteButton = ({ puppyID, listSetter }: DeleteButtonProps) => {
+const DeleteButton = ({ puppyID, deleteSetter }: DeleteButtonProps) => {
     const [ show, setShow ] = useState<boolean>(false);
 
     const handleShow = () => setShow(true);
@@ -12,7 +12,7 @@ const DeleteButton = ({ puppyID, listSetter }: DeleteButtonProps) => {
 
     const handleDelete = () => {
         deleteOne(puppyID)
-        listSetter(puppyID)
+        deleteSetter(puppyID)
         handleClose()
     }
 

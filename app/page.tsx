@@ -16,11 +16,7 @@ export default function Home() {
     birthdate: '',
   })
   
-  const DeleteFromPuppyList = (id: string) => {
-      const list = puppyList.filter(puppy => puppy._id !== id)
-      setPuppyList(list)
-      setSelectedPuppy(list[0])
-  }
+  
   
   useEffect(() => {
     fetchAll()
@@ -32,6 +28,25 @@ export default function Home() {
   const puppySelector = (newPuppy: Puppy) => {
     setSelectedPuppy(newPuppy)
   }
+
+  const deleteFromPuppyList = (id: string) => {
+    const list = puppyList.filter(puppy => puppy._id !== id)
+    setPuppyList(list)
+    setSelectedPuppy(list[0])
+  }
+
+  const addPuppyToList = (newPuppy : Puppy) => {
+    const list = [...puppyList, newPuppy]
+    setPuppyList(list)
+    setSelectedPuppy(newPuppy)
+  }
+
+  const editDetails = (id: string, newPuppy: Puppy) => {
+    const newList = puppyList.map(puppy => puppy._id === id ? newPuppy : puppy)
+    setPuppyList(newList)
+    setSelectedPuppy(newPuppy)
+  }
+  
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-around p-12">
@@ -45,9 +60,9 @@ export default function Home() {
           )
         })}
       </div>
-        <PuppyModal buttonText="Add Puppy"/>
+        <PuppyModal buttonText="Add Puppy" apiCall={addPuppyToList}/>
       </section>
-      <PuppyDisplay puppy={selectedPuppy} listSetter={DeleteFromPuppyList} />
+      <PuppyDisplay puppy={selectedPuppy} deleteSetter={deleteFromPuppyList} editSetter={editDetails}/>
     </main>
   )
 }

@@ -12,21 +12,22 @@ export type PuppyCardProps = {
 
 export type PuppyDisplayProps = {
     puppy: Puppy,
-    listSetter: Function,
+    deleteSetter: Function,
+    editSetter: Function,
 }
 
 export type PuppyModalProps = {
     buttonText: string,
     puppy?: Puppy,
-    //APIcall: Function,
+    apiCall: Function,
 }
 
 export type PuppyFormProps = {
     puppy?: Puppy,
-    //APIcall: Function,
+    apiCall: Function,
 }
 
 export type DeleteButtonProps = {
     puppyID : string,
-    listSetter: Function,
+    deleteSetter: Function,
 }

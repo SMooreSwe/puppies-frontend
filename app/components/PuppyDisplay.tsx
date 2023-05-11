@@ -4,7 +4,9 @@ import PuppyModal from './PuppyModal'
 import DeleteButton from './DeleteButton'
 
 const PuppyDisplay = (props: PuppyDisplayProps) => {
-    const { _id, name, breed, birthdate } = props.puppy
+  const {deleteSetter, editSetter, puppy} = props
+  const { _id, name, breed, birthdate } = puppy
+
   return (
     <section className='border-solid border-2 border-sky-400 p-12'>
         <div>{name}</div>
@@ -12,8 +14,8 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
         <div>{birthdate}</div>
         <hr className='my-2'/>
         <div className='flex justify-between gap-4'>
-          <PuppyModal buttonText='Edit Details'/>
-          <DeleteButton puppyID={_id!} listSetter={props.listSetter} />
+          <PuppyModal buttonText='Edit Details' apiCall={editSetter}/>
+          <DeleteButton puppyID={_id!} deleteSetter={deleteSetter} />
         </div>
         
       </section>
