@@ -13,3 +13,18 @@ export type PuppyCardProps = {
 export type PuppyDisplayProps = {
     puppy: Puppy,
 }
+
+export type PuppyModalProps = {
+    buttonText: string,
+    puppy?: Puppy,
+    //APIcall: Function,
+}
+
+export type PuppyFormProps = {
+    puppy?: Puppy,
+    //APIcall: Function,
+}
+
+export type DeleteButtonProps = {
+    puppyID : string
+}

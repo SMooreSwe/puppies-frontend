@@ -1,16 +1,21 @@
 import { PuppyDisplayProps } from '@/types/types'
 import React from 'react'
+import PuppyModal from './PuppyModal'
+import DeleteButton from './DeleteButton'
 
 const PuppyDisplay = (props: PuppyDisplayProps) => {
-    const { name, breed, birthdate } = props.puppy
+    const { _id, name, breed, birthdate } = props.puppy
   return (
     <section className='border-solid border-2 border-sky-400 p-12'>
         <div>{name}</div>
         <div>{breed}</div>
         <div>{birthdate}</div>
-        <hr />
-        <div>Update Form Here - modal?</div>
-        <div>Delete Puppy Here? - button?</div>
+        <hr className='my-2'/>
+        <div className='flex justify-between gap-4'>
+          <PuppyModal buttonText='Edit Details'/>
+          <DeleteButton puppyID={_id!} />
+        </div>
+        
       </section>
   )
 }
