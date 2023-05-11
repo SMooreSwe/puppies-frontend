@@ -36,12 +36,14 @@ export default function Home() {
   }
 
   const addPuppyToList = (newPuppy : Puppy) => {
+    //addApiCall - body new puppy
     const list = [...puppyList, newPuppy]
     setPuppyList(list)
     setSelectedPuppy(newPuppy)
   }
 
   const editDetails = (id: string, newPuppy: Puppy) => {
+    //editAPICall - body new Puppy
     const newList = puppyList.map(puppy => puppy._id === id ? newPuppy : puppy)
     setPuppyList(newList)
     setSelectedPuppy(newPuppy)

@@ -14,7 +14,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
         <div>{birthdate}</div>
         <hr className='my-2'/>
         <div className='flex justify-between gap-4'>
-          <PuppyModal buttonText='Edit Details' apiCall={editSetter}/>
+          <PuppyModal buttonText='Edit Details' apiCall={editSetter} puppy={puppy} />
           <DeleteButton puppyID={_id!} deleteSetter={deleteSetter} />
         </div>
         

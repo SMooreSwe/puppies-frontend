@@ -22,7 +22,7 @@ const PuppyModal = (props: PuppyModalProps) => {
       tabindex="-1" 
       aria-hidden="true" 
       className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div className='relative w-full max-w-2xl max-h-full inset-0 m-auto mt-[20%]'>
+      <div className='relative w-full max-w-2xl max-h-full inset-0 m-auto mt-[10%]'>
         <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
           <Modal.Header className='flex items-center justify-between p-6 border-b rounded-t dark:border-gray-600'>
             <Modal.Title className='text-xl font-semibold text-gray-900 dark:text-white'>
