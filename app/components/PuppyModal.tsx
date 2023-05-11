@@ -33,7 +33,7 @@ const PuppyModal = (props: PuppyModalProps) => {
             </button>
           </Modal.Header>
           <Modal.Body className='p-6 space-y-6'>
-            <PuppyForm puppy={puppy} apiCall={apiCall} puppyExists={props.puppyExists}/>
+            <PuppyForm puppy={puppy} apiCall={apiCall} puppyExists={props.puppyExists} closer={handleClose}/>
           </Modal.Body>
           <Modal.Footer className='flex items-center justify-end p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600'></Modal.Footer>
         </div>

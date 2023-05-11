@@ -27,6 +27,7 @@ export type PuppyFormProps = {
     puppy?: Puppy,
     apiCall: Function,
     puppyExists: boolean,
+    closer: Function,
 }
 
 export type DeleteButtonProps = {

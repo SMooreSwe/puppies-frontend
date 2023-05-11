@@ -1,5 +1,6 @@
 import { Puppy, PuppyFormProps } from '@/types/types'
 import React, { FormEvent, useRef, useState } from 'react'
+import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
 
 const PuppyForm = (props: PuppyFormProps) => {
     const nameRef = useRef<HTMLInputElement>(null)
@@ -15,6 +16,7 @@ const PuppyForm = (props: PuppyFormProps) => {
             birthdate: bDRef.current!.value,
         }
         props.apiCall(props.puppy?._id, newPuppy)
+        props.closer()
     }
 
   return (
