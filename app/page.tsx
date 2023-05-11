@@ -35,11 +35,20 @@ export default function Home() {
     setSelectedPuppy(list[0])
   }
 
-  const addPuppyToList = (newPuppy : Puppy) => {
-    //addApiCall - body new puppy
-    const list = [...puppyList, newPuppy]
-    setPuppyList(list)
-    setSelectedPuppy(newPuppy)
+  const addPuppyToList = (_id: string, newPuppy : Puppy) => {
+    fetch('http://localhost:8080/api/puppies', 
+    { method: 'post',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newPuppy)},
+    ).then(response => response.json())
+    .then(puppy => {
+      const list = [...puppyList, puppy]
+      setPuppyList(list)
+      setSelectedPuppy(puppy)
+    })
+    
   }
 
   const editDetails = (id: string, newPuppy: Puppy) => {

@@ -20,6 +20,7 @@ const PuppyForm = (props: PuppyFormProps) => {
             breed: breedRef.current!.value,
             birthdate: bDRef.current!.value,
         }
+        props.apiCall(props.puppy?._id, newPuppy)
     }
 
   return (
