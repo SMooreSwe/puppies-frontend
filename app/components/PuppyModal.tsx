@@ -12,7 +12,7 @@ const PuppyModal = (props: PuppyModalProps) => {
 
   return (
     <>
-    <button onClick={handleShow} className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+    <button onClick={handleShow} className='text-white bg-blue-700 hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center'>
       {buttonText}
     </button>
     
@@ -23,7 +23,7 @@ const PuppyModal = (props: PuppyModalProps) => {
       aria-hidden="true" 
       className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
       <div className='relative w-full max-w-2xl max-h-full inset-0 m-auto mt-[10%]'>
-        <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
+        <div className='relative bg-blue-500 rounded-lg'>
           <Modal.Header className='flex items-center justify-between p-6 border-b rounded-t dark:border-gray-600'>
             <Modal.Title className='text-xl font-semibold text-gray-900 dark:text-white'>
               {`${buttonText} Here`}
