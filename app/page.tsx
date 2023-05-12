@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import PuppyCard from "./components/PuppyCard";
 import PuppyDisplay from "./components/PuppyDisplay";
 import PuppyModal from "./components/PuppyModal";
-import { fetchAll } from "./utils/fetchCalls";
+import { addOne, editOne, fetchAll } from "./utils/fetchCalls";
 
 export default function Home() {
   const [puppyList, setPuppyList] = useState<Puppy[]>([])
@@ -36,13 +36,7 @@ export default function Home() {
   }
 
   const addPuppyToList = (_id: string, newPuppy : Puppy) => {
-    fetch('http://localhost:8080/api/puppies', 
-    { method: 'post',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newPuppy)},
-    ).then(response => response.json())
+    addOne(newPuppy)
     .then(puppy => {
       const list = [...puppyList, puppy]
       setPuppyList(list)
@@ -51,13 +45,7 @@ export default function Home() {
   }
 
   const editDetails = (id: string, newPuppy: Puppy) => {
-    fetch(`http://localhost:8080/api/puppies/${id}`, 
-    { method: 'put',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newPuppy)},
-    )
+    editOne(id, newPuppy)
     const newList = puppyList.map(puppy => puppy._id === id ? newPuppy : puppy)
     setPuppyList(newList)
     setSelectedPuppy(newPuppy)
