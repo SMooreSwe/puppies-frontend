@@ -53,10 +53,10 @@ export default function Home() {
   
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-around p-12">
+    <main className="flex min-h-screen flex-col items-center justify-around px-12 py-2">
       <h1 className='text-3xl'>Pick a Puppy</h1>
       <section className='flex flex-col gap-6 items-center'>
-      <div className="flex gap-6 border-solid border-2 border-sky-500 p-6 max-w-[90vw] overflow-x-scroll">
+      <div className="snap-x snap-mandatory grid gap-6 p-6 max-w-[90vw] grid-flow-col overflow-x-auto overscroll-contain auto-cols-[27%] sm:auto-cols-[80px]">
         {puppyList && puppyList.map(puppy => {
           const { _id } = puppy
           return (

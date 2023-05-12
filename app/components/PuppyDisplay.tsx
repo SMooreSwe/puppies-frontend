@@ -8,7 +8,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
   const { _id, name, breed, birthdate } = puppy
 
   return (
-    <section className='border-solid border-2 border-sky-400 p-12'>
+    <section className='flex flex-col justify-end border-solid border-2 border-sky-400 px-12 pb-4 pt-auto h-[40vh] rounded-lg'>
         <div>{name}</div>
         <div>{breed}</div>
         <div>{birthdate}</div>
