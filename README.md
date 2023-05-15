@@ -8,28 +8,28 @@ The pictures for each card are pulled from the Unsplash API and show pictures re
 
 The project is mobile-responsive and on smaller screens, one can scroll sideways through the names of all included puppies (as pictured)
 
-  ![A view of the UI] (public/UIphone.jpg)
-
-  ![A view of the UI] (public/PhoneGIF.gif)
-
+<div align=center>
+ <img src="public/PhoneGIF.gif"/>
+</div>
+ 
 ## Scope
 
 Through the UI, one has access to CRUD functions:
 
 - New puppies can be added, which updates the database as well as list of puppies in the UI.
 
-  ![A view of the creation UI] (public/UIcreate.jpg)
+  ![A view of the creation UI](public/UIcreate.jpg)
 
 - Puppies can be edited or completely changed via the UI.
 
-  ![A view of the editing UI] (public/UIedit.jpg)
+  ![A view of the editing UI](public/UIedit.jpg)
 
 - Puppies can be removed from the database.
 
 
 ## Approach
 
-![A view of the UI] (public/UIscreenshot.jpg)
+![A view of the UI](public/UIscreenshot.jpg)
 
 I wanted the UI to be accessible and clean. I therefore use Modals to ensure that editing and adding new entries was simple, but also unobtrusive during the search.
 
