@@ -28,3 +28,12 @@ export const editOne = (id: string, newPuppy : Puppy) => {
     body: JSON.stringify(newPuppy)},
   )
 }
+
+export const photoURL = (breed: string) => {
+  const search = `${breed} dog`
+   return fetch(`https://api.unsplash.com/search/photos?count=1&query=${search}&client_id=${process.env.NEXT_PUBLIC_UNSPLASH_KEY}`)
+    .then(response => response.json())
+    .then(response => {
+      const record = response.results[0]
+      return record.urls.small})
+}

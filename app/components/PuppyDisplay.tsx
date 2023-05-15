@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import PuppyModal from './PuppyModal'
 import DeleteButton from './DeleteButton'
+import { photoURL } from '../utils/fetchCalls'
 
 const PuppyDisplay = (props: PuppyDisplayProps) => {
   const {deleteSetter, editSetter, puppy} = props
@@ -10,13 +11,9 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
   const [ photo, setPhoto ] = useState<string>('')
 
   useEffect(() => {
-    const search = `${props.puppy.breed} dog`
-    fetch(`https://api.unsplash.com/search/photos?count=1&query=${search}&client_id=${process.env.NEXT_PUBLIC_UNSPLASH_KEY}`)
-    .then(response => response.json())
-    .then(response => {
-      const record = response.results[0]
-      setPhoto(record.urls.small)})
-  }, [props.puppy.breed])
+   photoURL(breed)
+    .then(url => setPhoto(url))
+  }, [breed])
   
   const container = {
     hidden: { opacity: 0 },
@@ -33,7 +30,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
     variants={container}
     initial="start"
     animate="end">
-      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[32vh] rounded-lg mb-2 overflow-hidden'/>
+      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[32vh] rounded-lg mb-2'/>
         <motion.ul
         variants={container}
         initial="start"
