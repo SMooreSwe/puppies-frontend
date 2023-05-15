@@ -26,11 +26,11 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
   }
 
   return (
-    <motion.section className='flex flex-col justify-end bg-sky-400 text-white px-12 pb-4 pt-2 h-[50vh] rounded-lg shadow-lg'
+    <motion.section className='flex flex-col justify-end bg-sky-400 text-white px-12 pb-4 pt-4 h-[60vh] md:h-[50vh] rounded-lg shadow-lg'
     variants={container}
     initial="start"
     animate="end">
-      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[32vh] rounded-lg mb-2'/>
+      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[32vh] rounded-lg my-auto'/>
         <motion.ul
         variants={container}
         initial="start"
