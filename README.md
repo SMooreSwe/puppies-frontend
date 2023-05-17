@@ -1,6 +1,6 @@
 # Puppies Frontend UI
 
-This project is a test of my typescript, react and fullstack skills. It connects to the separate PuppiesAPI repository, which accesses a MongoDB database of "puppies".
+This project is a test of my typescript, react and fullstack skills. It connects to the separate [PuppiesAPI repository](https://github.com/SMooreSwe/puppiesAPI), which accesses a MongoDB database of "puppies".
 
 The puppy objects consist of a breed, name, birthdate and their assigned id.
 
