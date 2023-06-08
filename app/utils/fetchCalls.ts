@@ -1,16 +1,16 @@
 import { Puppy } from "@/types/types"
 
 export const fetchAll = () => {
-    return fetch('http://localhost:8080/api/puppies')
+    return fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}`)
       .then(response => response.json())
 }
 
 export const deleteOne = (id: string) => {
- fetch(`http://localhost:8080/api/puppies/${id}`, { method: 'delete' })
+ fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}${id}`, { method: 'delete' })
 }
 
 export const addOne = (newPuppy: Puppy) => {
-    return fetch('http://localhost:8080/api/puppies', 
+    return fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}`, 
     { method: 'post',
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +20,7 @@ export const addOne = (newPuppy: Puppy) => {
 }
 
 export const editOne = (id: string, newPuppy : Puppy) => {
-  return fetch(`http://localhost:8080/api/puppies/${id}`, 
+  return fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}${id}`, 
   { method: 'put',
     headers: {
       "Content-Type": "application/json",
