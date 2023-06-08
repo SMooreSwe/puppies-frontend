@@ -11,6 +11,7 @@ const PuppyForm = (props: PuppyFormProps) => {
         event.preventDefault()
        
         const newPuppy : Puppy = {
+            _id: props.puppy?._id,
             name: nameRef.current!.value,
             breed: breedRef.current!.value,
             birthdate: bDRef.current!.value,
