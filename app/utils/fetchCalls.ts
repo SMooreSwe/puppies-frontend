@@ -6,7 +6,7 @@ export const fetchAll = () => {
 }
 
 export const deleteOne = (id: string) => {
- fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}${id}`, { method: 'delete' })
+ fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}/${id}`, { method: 'delete' })
 }
 
 export const addOne = (newPuppy: Puppy) => {
@@ -20,7 +20,7 @@ export const addOne = (newPuppy: Puppy) => {
 }
 
 export const editOne = (id: string, newPuppy : Puppy) => {
-  return fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}${id}`, 
+  return fetch(`${process.env.NEXT_PUBLIC_API_ADDRESS}/${id}`, 
   { method: 'put',
     headers: {
       "Content-Type": "application/json",
