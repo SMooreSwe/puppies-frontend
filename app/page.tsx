@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <>
       <img src="/sleepy.jpg" className="opacity-20 absolute left-0 top-0 w-[100%] h-[100%] -z-50 object-cover blur-sm" alt="background puppy" />
-      <main className="flex min-h-screen flex-col items-center justify-around px-10 lg:px-4 py-2">
+      <main className="flex min-h-screen flex-col items-center justify-center gap-2 px-10 lg:px-4 py-2">
         <h1 className='text-2xl md:text-6xl font-extrabold text-blue-500'>Pick a Puppy</h1>
         <section className='flex flex-col gap-4 items-center'>
         <div className="scroller snap-x snap-mandatory grid gap-6 px-6 pb-4 mt-1 max-w-[90vw] grid-flow-col overflow-x-auto overscroll-contain auto-cols-[27%] sm:auto-cols-[80px] xl:auto-cols-[160px]">
