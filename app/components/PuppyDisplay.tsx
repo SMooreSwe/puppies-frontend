@@ -30,7 +30,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
     variants={container}
     initial="start"
     animate="end">
-      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[27svh] rounded-lg my-auto'/>
+      <motion.img key={`${_id}.photo`} variants={item} src={photo} alt="picture of this puppy" className='object-cover max-h-[55%] rounded-lg my-auto'/>
         <motion.ul
         variants={container}
         initial="start"
