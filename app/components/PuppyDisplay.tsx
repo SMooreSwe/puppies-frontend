@@ -26,7 +26,7 @@ const PuppyDisplay = (props: PuppyDisplayProps) => {
   }
 
   return (
-    <motion.section className='flex flex-col justify-end bg-sky-400 text-white px-12 pb-4 pt-4 h-[60vh] md:h-[50vh] rounded-lg shadow-lg'
+    <motion.section className='flex flex-col justify-end bg-sky-400 text-white px-12 pb-4 pt-4 h-[60svh] md:h-[50svh] rounded-lg shadow-lg'
     variants={container}
     initial="start"
     animate="end">
