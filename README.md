@@ -1,6 +1,6 @@
 # Puppies Frontend UI
 
-This project is a test of my typescript, react and fullstack skills. It connects to the separate [PuppiesAPI repository](https://github.com/SMooreSwe/puppiesAPI), which accesses a MongoDB database of "puppies".
+This project is a test of my typescript, react and fullstack skills. It connects to the separate C# [PuppiesAPI repository](https://github.com/SMooreSwe/dotnetPuppies), which accesses an Azure SQL database of "puppies". The deployed project can be found [here](https://puppypicker.vercel.app/).
 
 The puppy objects consist of a breed, name, birthdate and their assigned id.
 
@@ -32,6 +32,10 @@ Through the UI, one has access to CRUD functions:
 ![A view of the UI](public/UIscreenshot.jpg)
 
 I wanted the UI to be accessible and clean. I therefore use Modals to ensure that editing and adding new entries was simple, but also unobtrusive during the search.
+
+## To-Do
+
+I have noticed an issue when browsers are not full screen, so will be restyling the puppy "cards" to accomodate this.
 
 ## Tools
 
